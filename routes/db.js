@@ -8,8 +8,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-const nosqlconect = 'mongodb+srv://Champ:1234@agendadb.erxhg96.mongodb.net/Agenda' ;
-mongoose.connect(nosqlconect);
+const nosqlconect = process.env.NOSQLCONECT;
+mongoose.connect(nosqlconect, {
+  tls: true,
+  tlsAllowInvalidCertificates: true,
+});
 
 const connection = mongoose.connection;
 
