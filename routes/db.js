@@ -12,6 +12,7 @@ const nosqlconect = process.env.NOSQLCONECT;
 mongoose.connect(nosqlconect, {
   tls: true,
   tlsAllowInvalidCertificates: true,
+  serverSelectionTimeoutMS: 5000,
 });
 
 const connection = mongoose.connection;
