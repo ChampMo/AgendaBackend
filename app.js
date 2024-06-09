@@ -6,6 +6,7 @@ import session from 'express-session'
 import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv';
 import cors from 'cors';
+import MongoStore from'connect-mongo';
 
 const port = 8000;
 dotenv.config();
@@ -53,6 +54,7 @@ app.use(session({
         httpOnly: false,
         maxAge: 1000 * 60 * 60 * 24 * 7, // One week
     },
+    store: MongoStore.create({ mongoUrl: "mongodb+srv://Champ:1234@agendadb.erxhg96.mongodb.net/Agenda" })
 }));
 
 

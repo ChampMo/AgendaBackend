@@ -9,10 +9,7 @@ dotenv.config();
 
 
 const nosqlconect = 'mongodb+srv://Champ:1234@agendadb.erxhg96.mongodb.net/Agenda' ;
-mongoose.connect(nosqlconect, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(nosqlconect);
 
 const connection = mongoose.connection;
 
